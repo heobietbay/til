@@ -1,0 +1,16 @@
+Questions: Is there any way to get the origin of an alert box?
+
+I work with some very large and confusing JavaScript files that I did not write. Sometimes an alert will come up but 
+I don't know where it's coming from.
+You could search all files for the text contained in the alert but if that text is dynamic it won't work.
+Is there a way to set a breakpoint in order to intercept an alert?
+
+Answer:
+At the very top of your HTML:
+
+window.alert = function() {
+    debugger;
+}
+debugger is a statement that invokes any debugging functionality available.
+With developer tools open, you'll automatically hit a breakpoint whenever alert is called. 
+You can then inspect the call stack to see exactly what called the custom alert function.
