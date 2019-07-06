@@ -1,0 +1,5 @@
+'con meo' == 'con mèo' // this would be false
+
+// If we want to say 'con meo' IS SAME as 'con mèo', we can use localeCompare
+'con meo'.localeCompare('con mèo',undefined,{sensitivity:'base'}) // this will be 0, meaning they are the same
+
