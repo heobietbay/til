@@ -1,4 +1,4 @@
-Questions: Is there any way to get the origin of an alert box?
+1.Questions: Is there any way to get the origin of an alert box?
 
 I work with some very large and confusing JavaScript files that I did not write. Sometimes an alert will come up but 
 I don't know where it's coming from.
@@ -14,3 +14,12 @@ window.alert = function() {
 debugger is a statement that invokes any debugging functionality available.
 With developer tools open, you'll automatically hit a breakpoint whenever alert is called. 
 You can then inspect the call stack to see exactly what called the custom alert function.
+
+
+2.If I have an array of object, how do I check if there is NaN in the array? indexOf does not work correctly.
+  [1,2,3,undefined,'hello',NaN].indexOf('hello') // 4
+  [1,2,3,undefined,'hello',NaN].indexOf(undefined)// 3 
+  [1,2,3,undefined,'hello',NaN].indexOf(NaN) // -1 THIS IS WRONG
+  
+  Answer: you can use includes, this will work correctly even for NaN
+  [1,2,3,undefined,'hello',NaN].includes(NaN) // true
