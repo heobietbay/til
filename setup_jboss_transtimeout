@@ -1,0 +1,5 @@
+1.Open standalone.xml
+2.Find  <subsystem xmlns="urn:jboss:domain:transactions:4.0">
+3.Add a new element within it, the timeout is seconds based
+	<coordinator-environment default-timeout="180"/>
+ 4.Saved
